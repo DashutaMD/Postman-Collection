@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "3998822b-a754-4cb5-8349-c545ab7090d0",
+		"name": "Dummy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23300646"
+	},
+	"item": [
+		{
+			"name": "Create new user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Rajkumar SM\",\r\n    \"username\": \"stm\",\r\n    \"email\": \"user@testengineer.ru\",\r\n    \"address\": {\r\n      \"street\": \"Gagarina\",\r\n      \"suite\": \"31\",\r\n      \"city\": \"Moscow\",\r\n      \"zipcode\": \"600007\",\r\n      \"geo\": {\r\n        \"lat\": \"10.0000\",\r\n        \"lng\": \"80.0000\"\r\n      }\r\n    },\r\n    \"phone\": \"1-2345-6-7890\",\r\n    \"website\": \"testengineer.ru\",\r\n    \"company\": {\r\n      \"name\": \"testengineer.ru\",\r\n      \"catchPhrase\": \"website for QA engineers\",\r\n      \"bs\": \"real-time tutorials\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Information about users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if Leanne Graham has the userid 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eql('Leanne Graham');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

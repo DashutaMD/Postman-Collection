@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "08e7aaea-a059-4631-9449-028b264c3063",
+		"name": "Skillbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23300646"
+	},
+	"item": [
+		{
+			"name": "Получение списка пользователей",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dashuta",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dashuta",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice2/api/users/",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice2",
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение конкретного пользователя",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice2//api/users/130",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice2",
+						"",
+						"api",
+						"users",
+						"130"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание пользователя",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dashuta",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dashuta",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"itemsOfClients\": \r\n     [\r\n        {\r\n           \"id\": 111,\r\n           \"person\": {\r\n                \"name\": \"Семен\",\r\n                \"surname\": \"Семенов\"\r\n           }\r\n            }\r\n         ]\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice2/api/users/create",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice2",
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновление пользователя",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dashuta",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dashuta",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"update\": \r\n         {\r\n        \"dateOfBirth\": \"08.04.1990\"\r\n             }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice2/api/users/100/update",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice2",
+						"api",
+						"users",
+						"100",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление конкретного пользователя",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dashuta",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dashuta",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice2/api/users/15/delete",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice2",
+						"api",
+						"users",
+						"15",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "dashuta",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "dashuta",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
